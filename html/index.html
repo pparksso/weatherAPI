@@ -22,117 +22,120 @@
     <!-- js -->
     <script src="https://kit.fontawesome.com/4a150f6eb1.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/key.js" defer></script>
     <script src="../js/main.js" defer></script>
   </head>
   <body>
-    <header id="header">
-      <div class="mainTitleBox">
-        <h1 class="city">Toronto</h1>
-        <p class="time"><span class="hour">3</span>:<span class="min">31</span><span class="pmam">PM</span>EST</p>
-      </div>
-      <div class="searchBox">
-        <input type="text" placeholder=" city" class="search" autofocus maxlength="10" /><button class="searchBtn"><span class="material-icons"> location_searching </span></button>
-      </div>
-    </header>
-    <section id="top">
-      <div class="container">
-        <div class="nowTemperBox">
-          <h1 class="bigCircle">-8</h1>
+    <div class="cover">
+      <header id="header">
+        <div class="mainTitleBox">
+          <h1 class="city">Toronto</h1>
+          <p class="time"><span class="hour">3</span>:<span class="min">31</span><span class="pmam">PM</span>EST</p>
         </div>
-        <div class="todayList">
+        <div class="searchBox">
+          <input type="text" placeholder=" city" class="search" autofocus maxlength="10" /><button class="searchBtn"><span class="material-icons"> location_searching </span></button>
+        </div>
+      </header>
+      <section id="top">
+        <div class="container">
+          <div class="nowTemperBox">
+            <h1 class="bigCircle">-8</h1>
+          </div>
+          <div class="todayList">
+            <ul>
+              <li class="TopAfternoonBox">
+                <span class="">Afternoon</span>
+                <div class="TopAfternoonIcon"><i class="fa-solid fa-cloud"></i></div>
+                <p><span class="TopAfternoonMax circle">18</span><span class="TopAfternoonMin circle">18</span></p>
+              </li>
+              <li class="TopEveningBox">
+                <span class="">Evening</span>
+                <div class="TopEveningIcon">
+                  <i class="fa-solid fa-cloud"></i>
+                </div>
+                <p><span class="TopEveningMax circle">18</span><span class="TopEveningMin circle">18</span></p>
+              </li>
+              <li class="TopNightBox">
+                <span class="">Night</span>
+                <div class="TopNightIcon"><i class="fa-solid fa-cloud"></i></div>
+                <p><span class="TopNightMax circle">18</span><span class="TopNightMin circle">18</span></p>
+              </li>
+              <li class="TopTomorrowBox">
+                <span class="">Tomorrow</span>
+                <div class="TopTomorrowIcon"><i class="fa-solid fa-cloud"></i></div>
+                <p><span class="TopTomorrowMax circle">18</span><span class="TopTomorrowMin circle">18</span></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- top end -->
+      <section id="chartBox">
+        <div class="container">
+          <div class="title">
+            <h1>Forecast</h1>
+          </div>
+          <div class="chart"></div>
+        </div>
+      </section>
+      <!-- chartBox end -->
+      <section id="weeklyBox">
+        <div class="container">
           <ul>
-            <li class="TopAfternoonBox">
-              <span class="">Afternoon</span>
-              <div class="TopAfternoonIcon"><i class="fa-solid fa-cloud"></i></div>
-              <p><span class="TopAfternoonMax circle">18</span><span class="TopAfternoonMin circle">18</span></p>
-            </li>
-            <li class="TopEveningBox">
-              <span class="">Evening</span>
-              <div class="TopEveningIcon">
+            <li>
+              <div class="dateWrap">
+                <span class="day">Mon</span>
+                <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
+              </div>
+              <div class="weatherIcon">
                 <i class="fa-solid fa-cloud"></i>
               </div>
-              <p><span class="TopEveningMax circle">18</span><span class="TopEveningMin circle">18</span></p>
+              <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
             </li>
-            <li class="TopNightBox">
-              <span class="">Night</span>
-              <div class="TopNightIcon"><i class="fa-solid fa-cloud"></i></div>
-              <p><span class="TopNightMax circle">18</span><span class="TopNightMin circle">18</span></p>
+            <li>
+              <div class="dateWrap">
+                <span class="day">Mon</span>
+                <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
+              </div>
+              <div class="weatherIcon">
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+              <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
             </li>
-            <li class="TopTomorrowBox">
-              <span class="">Tomorrow</span>
-              <div class="TopTomorrowIcon"><i class="fa-solid fa-cloud"></i></div>
-              <p><span class="TopTomorrowMax circle">18</span><span class="TopTomorrowMin circle">18</span></p>
+            <li>
+              <div class="dateWrap">
+                <span class="day">Mon</span>
+                <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
+              </div>
+              <div class="weatherIcon">
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+              <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
+            </li>
+            <li>
+              <div class="dateWrap">
+                <span class="day">Mon</span>
+                <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
+              </div>
+              <div class="weatherIcon">
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+              <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
+            </li>
+            <li>
+              <div class="dateWrap">
+                <span class="day">Mon</span>
+                <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
+              </div>
+              <div class="weatherIcon">
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+              <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
             </li>
           </ul>
         </div>
-      </div>
-    </section>
-    <!-- top end -->
-    <section id="chartBox">
-      <div class="container">
-        <div class="title">
-          <h1>Forecast</h1>
-        </div>
-        <div class="chart"></div>
-      </div>
-    </section>
-    <!-- chartBox end -->
-    <section id="weeklyBox">
-      <div class="container">
-        <ul>
-          <li>
-            <div class="dateWrap">
-              <span class="day">Mon</span>
-              <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
-            </div>
-            <div class="weatherIcon">
-              <i class="fa-solid fa-cloud"></i>
-            </div>
-            <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
-          </li>
-          <li>
-            <div class="dateWrap">
-              <span class="day">Mon</span>
-              <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
-            </div>
-            <div class="weatherIcon">
-              <i class="fa-solid fa-cloud"></i>
-            </div>
-            <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
-          </li>
-          <li>
-            <div class="dateWrap">
-              <span class="day">Mon</span>
-              <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
-            </div>
-            <div class="weatherIcon">
-              <i class="fa-solid fa-cloud"></i>
-            </div>
-            <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
-          </li>
-          <li>
-            <div class="dateWrap">
-              <span class="day">Mon</span>
-              <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
-            </div>
-            <div class="weatherIcon">
-              <i class="fa-solid fa-cloud"></i>
-            </div>
-            <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
-          </li>
-          <li>
-            <div class="dateWrap">
-              <span class="day">Mon</span>
-              <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
-            </div>
-            <div class="weatherIcon">
-              <i class="fa-solid fa-cloud"></i>
-            </div>
-            <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <!-- weekly end -->
+      </section>
+      <!-- weekly end -->
+    </div>
   </body>
 </html>
