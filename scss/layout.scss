@@ -3,6 +3,7 @@ body {
   color: #fff;
   background-color: #555;
   font-weight: 300;
+  font-size: 18px;
 }
 .container {
   width: 90vw;
@@ -148,8 +149,45 @@ body {
     }
     .chart {
       border-top: 1px solid rgba(255, 255, 255, 0.5);
-
       height: 40vh;
+    }
+  }
+}
+#weeklyBox {
+  .container {
+    border-top: 1px dashed rgba(255, 255, 255, 0.3);
+    ul {
+      padding-top: 3%;
+      display: flex;
+      li {
+        width: 20%;
+        .dateWrap {
+          justify-content: center;
+          display: flex;
+          margin-bottom: 15px;
+          .day {
+            display: inline-block;
+            margin-right: 10px;
+          }
+        }
+        .weatherIcon {
+          text-align: center;
+          margin-bottom: 15px;
+          i {
+            font-size: 45px;
+          }
+        }
+        .weeklyTemperBox {
+          text-align: center;
+          font-size: 20px;
+          .weeklyTempMax {
+            margin-right: 20px;
+          }
+          .weeklyTempMin {
+            color: rgb(174, 237, 253);
+          }
+        }
+      }
     }
   }
 }
