@@ -101,7 +101,7 @@ body {
     }
   }
   .todayList {
-    border: 1px dashed rgba(255, 255, 255, 0.5);
+    border: 1px dashed rgba(255, 255, 255, 0.3);
     border-left: none;
     border-right: none;
     height: 100%;
@@ -136,6 +136,20 @@ body {
           }
         }
       }
+    }
+  }
+}
+#chartBox {
+  .container {
+    .title {
+      h1 {
+        font-size: 24px;
+      }
+    }
+    .chart {
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+
+      height: 40vh;
     }
   }
 }
