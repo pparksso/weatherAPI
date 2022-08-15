@@ -14,7 +14,7 @@ const today = () => {
   hourBox.innerHTML = resultHour;
   minBox.innerHTML = resultMin;
 };
-
+// 백그라운드
 const backgroundApi = (cityName) => {
   axios({
     url: `https://api.unsplash.com/photos/?client_id=${unsplashKey}&query=${cityName}`,
