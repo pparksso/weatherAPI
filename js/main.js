@@ -2,7 +2,9 @@ const body = document.querySelector("body");
 const city = document.querySelector("#header .city");
 const hourBox = document.querySelector("#header .hour");
 const minBox = document.querySelector("#header .min");
-
+const nowTemper = document.querySelector("#top .nowTemper");
+const todayWeatherList = document.querySelector("#top .todayList ul");
+const ctx = document.querySelector("#myChart").getContext("2d");
 let tempRegion = "";
 let cityName = "";
 //시간
@@ -32,13 +34,20 @@ const currentLocation = navigator.geolocation.getCurrentPosition(async (position
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
   await axios({
-    url: `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${openWeatherKey}&lang=kr&units=metric`,
+    url: `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${openWeatherKey}&units=metric`,
   })
     .then((res) => {
-      console.log(res.data);
       const data = res.data;
       cityName = data.name;
-      backgroundApi();
+      backgroundApi(cityName);
+      nowTemper.innerHTML = `${Math.floor(data.main.temp)}`;
+      todayWeatherList.innerHTML = `
+      <li class="today">
+                <span class="">Today</span>
+                <div class="todayIcon"><img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].main}"></div>
+                <p><span class="todayMax circle">${Math.floor(data.main.temp_max)}</span><span class="todayMin circle">${Math.floor(data.main.temp_min)}</span></p>
+              </li>
+      `;
     })
     .then(() => {
       axios({
@@ -50,6 +59,84 @@ const currentLocation = navigator.geolocation.getCurrentPosition(async (position
       }).then((response) => {
         const translate = response.data.message.result.translatedText;
         city.innerHTML = translate;
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  await axios({
+    url: `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${openWeatherKey}&cnt=8&units=metric`,
+  })
+    .then((res) => {
+      const list = res.data.list;
+      let tempArr = [];
+      for (let i = 0; i < list.length; i++) {
+        tempArr.push(Math.floor(list[i].main.temp));
+      }
+      const mixedChart = new Chart(ctx, {
+        data: {
+          datasets: [
+            {
+              type: "bar",
+              label: "Bar Dataset",
+              data: tempArr,
+              backgroundColor: "rgba(255,255,255,0.3)",
+              order: 2,
+            },
+            {
+              type: "line",
+              label: "Line Dataset",
+              data: tempArr,
+              fill: false,
+              borderColor: "#fff",
+              order: 1,
+            },
+          ],
+          labels: ["12PM", "3AM", "6AM", "9AM", "12AM", "3PM", "6PM", "9PM"],
+        },
+        options: {
+          tooltips: {
+            enabled: false,
+          },
+          hover: {
+            animationDuration: 0,
+          },
+          scales: {
+            xAxes: [
+              {
+                ticks: {
+                  fontSize: 11, //x축 텍스트 폰트 사이즈
+                  fontColor: "rgba(0,0,0,0)", //x축 레이브 안보이게
+                },
+                gridLines: {
+                  display: false,
+                  lineWidth: 0,
+                },
+              },
+            ],
+            yAxes: [
+              {
+                ticks: {
+                  display: false, //y축 텍스트 삭제
+                  beginAtZero: false, //y축값이 0부터 시작
+                  display: false,
+                },
+                gridLines: {
+                  display: false,
+                  lineWidth: 0,
+                },
+              },
+            ],
+          },
+          legend: {
+            display: true,
+            labels: {
+              boxWidth: 0,
+              fontColor: "rgba(0,0,0,0)",
+              fontSize: 20,
+            },
+          },
+        },
       });
     })
     .catch((err) => {

@@ -115,7 +115,6 @@ body {
     text-align: center;
     border-right: none;
     height: 100%;
-    margin-bottom: 1.5%;
     ul {
       display: flex;
       li {
@@ -123,14 +122,9 @@ body {
         > span {
           font-size: 20px;
           display: inline-block;
-          margin-bottom: 20px;
         }
         > div {
           text-align: center;
-          margin-bottom: 20px;
-          i {
-            font-size: 30px;
-          }
         }
         > p {
           font-size: 18px;
@@ -156,9 +150,10 @@ body {
         font-size: 24px;
       }
     }
-    .chart {
+    #myChart {
       border-top: 1px solid rgba(255, 255, 255, 0.5);
       height: 40vh;
+      width: 100%;
     }
   }
 }

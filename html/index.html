@@ -22,7 +22,7 @@
     <!-- js -->
     <script src="https://kit.fontawesome.com/4a150f6eb1.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/key.js" defer></script>
     <script src="../js/main.js" defer></script>
   </head>
@@ -40,33 +40,10 @@
       <section id="top">
         <div class="container">
           <div class="nowTemperBox">
-            <h1 class="bigCircle">-8</h1>
+            <h1 class="bigCircle nowTemper"></h1>
           </div>
           <div class="todayList">
-            <ul>
-              <li class="TopAfternoonBox">
-                <span class="">Afternoon</span>
-                <div class="TopAfternoonIcon"><i class="fa-solid fa-cloud"></i></div>
-                <p><span class="TopAfternoonMax circle">18</span><span class="TopAfternoonMin circle">18</span></p>
-              </li>
-              <li class="TopEveningBox">
-                <span class="">Evening</span>
-                <div class="TopEveningIcon">
-                  <i class="fa-solid fa-cloud"></i>
-                </div>
-                <p><span class="TopEveningMax circle">18</span><span class="TopEveningMin circle">18</span></p>
-              </li>
-              <li class="TopNightBox">
-                <span class="">Night</span>
-                <div class="TopNightIcon"><i class="fa-solid fa-cloud"></i></div>
-                <p><span class="TopNightMax circle">18</span><span class="TopNightMin circle">18</span></p>
-              </li>
-              <li class="TopTomorrowBox">
-                <span class="">Tomorrow</span>
-                <div class="TopTomorrowIcon"><i class="fa-solid fa-cloud"></i></div>
-                <p><span class="TopTomorrowMax circle">18</span><span class="TopTomorrowMin circle">18</span></p>
-              </li>
-            </ul>
+            <ul></ul>
           </div>
         </div>
       </section>
@@ -76,7 +53,7 @@
           <div class="title">
             <h1>Forecast</h1>
           </div>
-          <div class="chart"></div>
+          <canvas id="myChart"></canvas>
         </div>
       </section>
       <!-- chartBox end -->
