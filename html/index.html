@@ -31,7 +31,7 @@
       <header id="header">
         <div class="mainTitleBox">
           <h1 class="city"></h1>
-          <p class="time"><span class="hour"></span> : <span class="min"></span>KST</p>
+          <p class="time"><span class="hour"></span> : <span class="min"></span> <span class="amPm"></span></p>
         </div>
         <div class="searchBox">
           <input type="text" placeholder=" city" class="search" autofocus maxlength="10" /><button class="searchBtn"><span class="material-icons"> location_searching </span></button>
@@ -39,8 +39,16 @@
       </header>
       <section id="top">
         <div class="container">
-          <div class="nowTemperBox">
-            <h1 class="bigCircle nowTemper"></h1>
+          <div class="weekly">
+            <span>WED</span>
+          </div>
+          <div class="todayCenterBox">
+            <div class="imgBox"><img src="" alt="" /></div>
+            <div class="nowtemper"></div>
+          </div>
+          <div class="maxMinBox">
+            <span class="max"></span>
+            <span class="min"></span>
           </div>
           <div class="todayList">
             <ul></ul>
@@ -53,66 +61,11 @@
           <div class="title">
             <h1>Forecast</h1>
           </div>
-          <canvas id="myChart"></canvas>
+          <!-- <canvas id="myChart"></canvas> -->
         </div>
       </section>
       <!-- chartBox end -->
-      <section id="weeklyBox">
-        <div class="container">
-          <ul>
-            <li>
-              <div class="dateWrap">
-                <span class="day">Mon</span>
-                <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
-              </div>
-              <div class="weatherIcon">
-                <i class="fa-solid fa-cloud"></i>
-              </div>
-              <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
-            </li>
-            <li>
-              <div class="dateWrap">
-                <span class="day">Mon</span>
-                <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
-              </div>
-              <div class="weatherIcon">
-                <i class="fa-solid fa-cloud"></i>
-              </div>
-              <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
-            </li>
-            <li>
-              <div class="dateWrap">
-                <span class="day">Mon</span>
-                <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
-              </div>
-              <div class="weatherIcon">
-                <i class="fa-solid fa-cloud"></i>
-              </div>
-              <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
-            </li>
-            <li>
-              <div class="dateWrap">
-                <span class="day">Mon</span>
-                <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
-              </div>
-              <div class="weatherIcon">
-                <i class="fa-solid fa-cloud"></i>
-              </div>
-              <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
-            </li>
-            <li>
-              <div class="dateWrap">
-                <span class="day">Mon</span>
-                <div class="dateBox"><span class="month">12</span>/<span class="date">12</span></div>
-              </div>
-              <div class="weatherIcon">
-                <i class="fa-solid fa-cloud"></i>
-              </div>
-              <div class="weeklyTemperBox"><span class="weeklyTempMax circle">-11</span><span class="weeklyTempMin circle">18</span></div>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <section id="weeklyBox"></section>
       <!-- weekly end -->
     </div>
   </body>
